@@ -19,7 +19,7 @@ describe('App', () => {
   })
 
   describe('when clicking the `add-gift` button', () => {
-    beforeEach('click the add button', () => {
+    beforeEach(() => {
       // first find the addGift button, then test that the state updates
       // .find can find by tag or classname (start with period)
       // enzyme provides .simulate
