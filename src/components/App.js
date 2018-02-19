@@ -11,15 +11,18 @@ class App extends Component {
     const { gifts } = this.state
 
     // find max id
-    const maxId = Math.max(...gifts.map(gift => gift.id)) || 0
+    const ids = gifts.map(gift => gift.id)
+    const maxId = ids.length > 0 ? Math.max(...ids) : 0
     gifts.push({ id: maxId + 1 })
+
+    this.setState({ gifts })
   }
 
   render () {
     return (
       <div>
         <h2>Gift Giver</h2>
-        <Button className='btn-add'>Add Gift</Button>
+        <Button className='btn-add' onClick={this.addGift}>Add Gift</Button>
       </div>
     )
   }

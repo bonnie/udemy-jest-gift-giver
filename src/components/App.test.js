@@ -23,5 +23,5 @@ it('adds a new gift to `state` when clicking the `add gift` button', () => {
   // enzyme provides .simulate
   app.find('.btn-add').simulate('click')
 
-  expect(app.state().gifts.to.deeply.equal([{ id: 1 }]))
+  expect(app.state().gifts).toEqual([{ id: 1 }])
 })
